@@ -8,6 +8,8 @@ Amazon Pinpoint users will need to re-create any asset they want to have in thei
 
 ## Solution
 
+![solution_process](https://github.com/Pioank/pinpoint-cf-journeys-migration/blob/main/CF-Journey-Copy-Process.PNG)
+
 The solution presented in this repository, utilizes AWS CloudFormation that executes an AWS Lambda function upon deployment and copies the specified Journeys from one Amazon Pinpoint Project to another. The solution can copy journeys between AWS regions and have them created either in an existing Amazon Pinpoint Project or a new one.
 
 **Key features:**
@@ -21,7 +23,7 @@ The solution presented in this repository, utilizes AWS CloudFormation that exec
 ## Implementation
 
 1. Navigate to the AWS CloudFormation console to the AWS Region that you want to paste the copied Journeys
-2. Create a Stack from New Resources and select the AWS CloudFormation template from this repository
+2. Create a Stack from New Resources and select the [AWS CloudFormation template](https://github.com/Pioank/pinpoint-cf-journeys-migration/blob/main/CF-Pinpoint-Journeys-Migration.yaml) from this repository
 3. Fill the template parameters as shown below:
     1. **Stack name**: Provide a name for your AWS CloudFormation stack
     2. **AWSRegionFrom**: Select from the list the AWS Region where you want to copy the existing Pinpoint journeys from
