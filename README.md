@@ -18,7 +18,7 @@ The solution presented in this repository, utilizes AWS CloudFormation that exec
 4. Creation of new Amazon Pinpoint project to paste the Journeys if you don't have one
 5. Deletion of all Journeys created when deleting the CloudFormation stack
 
-**IMPROTANT**: The solution will reset the **Starting** and **End** dates of the copied Journeys. This is done because these dates might be in the past, something that isn't allowed to have when creating a Campaign or Journey in Pinpoint.
+**IMPROTANT**: The solution will reset the **Starting** and **End** dates of the copied Journeys. This is done because these dates might be in the past, something that isn't allowed to have when creating a Campaign or Journey in Pinpoint. Also the **Status** of all newly created Journeys is updated to **DRAFT**, which means that you will need to publish them.
 
 ## Implementation
 
