@@ -16,9 +16,12 @@ The solution presented in this repository, utilizes AWS CloudFormation that exec
 1. Programmatically obtain existing Journeys
 3. Cross AWS Region copying
 4. Creation of new Amazon Pinpoint project to paste the Journeys if you don't have one
-5. Deletion of all Journeys created when deleting the CloudFormation stack
+5. Optional deletion of all Journeys created when deleting the CloudFormation stack
 
-**IMPROTANT**: The solution will reset the **Starting** and **End** dates of the copied Journeys. This is done because these dates might be in the past, something that isn't allowed to have when creating a Campaign or Journey in Pinpoint. Also the **Status** of all newly created Journeys is updated to **DRAFT**, which means that you will need to publish them.
+**IMPROTANT**: 
+- The solution will reset the **Starting** and **End** dates of the copied Journeys. This is done because these dates might be in the past, something that isn't allowed to have when creating a Campaign or Journey in Pinpoint. 
+- The **Status** of all newly created Journeys is updated to **DRAFT**, which means that you will need to publish them.
+- If the CloudFormation creates a new Pinpoint Project, that won't be deleted when deleting the CloudFormation stack
 
 ## Implementation
 
@@ -28,7 +31,8 @@ The solution presented in this repository, utilizes AWS CloudFormation that exec
     1. **Stack name**: Provide a name for your AWS CloudFormation stack
     2. **AWSRegionFrom**: Select from the list the AWS Region where you want to copy the existing Pinpoint journeys from
     3. **PinpointProjectIdFrom**: Provide the Amazon Pinpoint Project Id for the project that hosts the Pinpoint journeys
-    4. **PinpointJourneyIds**: Type the Pinpoint Journey Ids that you want to copy separated by comma ","
+    4. **PinpointJourneyIds**: Type the Pinpoint Journey Ids that you want to copy separated by comma "," and no spaces
     5. **PinpointProjectId**: Type the Pinpoint Project Id if you already have one where you want the Journeys to be pasted otherwise leave it empty
     6. **NewPInpointProjectName**: If you don't have an existing Pinpoint Project then type a name to create one
+    7. **DeleteAll**: If Yes is selected then all Pinpoint Journeys will be deleted. Note that if you create a Pinpoint Project as part of this CloudFormation template, it won't be deleted. 
 4. Create the Stack
